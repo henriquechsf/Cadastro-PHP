@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sistema de Cadastro - PHP</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="menu">
+                <li>Cadastro</li>
+                <a href="consultas.php"><li>Consultas</li></a>
+            </ul>
+        </nav>    
+
+        <section>
+            <h1>Cadastro</h1>
+            <hr><br>
+
+            <form method="POST" action="processa.php">
+                
+                Nome <br>
+                <input type="text" name="nome" class="campo" maxlength="40" required autofocus ><br>
+                Email <br>
+                <input type="text" name="email" class="campo" maxlength="50" required ><br>
+                Profissão <br>
+                <input type="text" name="profissao" class="campo" maxlength="40" required ><br>
+
+                <br>
+                <input type="submit" value="Salvar" class="btn">
+                <input type="reset" value="Limpar" class="btn">
+                
+            </form>
+
+        </section>
+    </div> 
+</body>
+</html>
