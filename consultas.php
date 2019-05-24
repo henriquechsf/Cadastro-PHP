@@ -2,14 +2,9 @@
 
 include_once("conexao.php");
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$profissao = $_POST['profissao'];
-
-$sql = "INSERT INTO usuarios (nome, email, profissao) VALUES ('$nome', '$email', '$profissao')";
-$salvar = mysqli_query($conexao, $sql);
-
-$linhas = mysqli_affected_rows($conexao);
+$sql = "select * from usuarios";
+$consulta = mysqli_query($conexao, $sql);
+$registros = mysqli_num_rows($consulta);
 
 mysqli_close($conexao);
 
@@ -35,16 +30,13 @@ mysqli_close($conexao);
         </nav>    
 
         <section>
-            <h1>Confirmação de Cadastro</h1>
+            <h1>Consultas</h1>
             <hr><br>
 
-            <?php           
-                if ($linhas == 1) {
-                    print "Cadastro efetuado com sucesso!";
-                }else{
-                    print "Cadastro não efetuado. <br> Já existe um usuário com este email.";
-                }       
+            <?php
+               print "$registros registros encontrados.";
             ?>
+            
 
         </section>
     </div> 
