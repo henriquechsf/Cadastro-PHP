@@ -2,7 +2,9 @@
 
 include_once("conexao.php");
 
-$sql = "select * from usuarios";
+$filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
+
+$sql = "SELECT * FROM usuarios WHERE profissao LIKE '%$filtro%' ORDER BY nome";
 $consulta = mysqli_query($conexao, $sql);
 $registros = mysqli_num_rows($consulta);
 
@@ -43,6 +45,7 @@ $registros = mysqli_num_rows($consulta);
             </form>
 
             <?php
+            print "Resustado da pesquisa com a palavra <strong>$filtro</strong>.<br><br>";
             print "$registros registros encontrados.";
             print "<br><br>";
 
