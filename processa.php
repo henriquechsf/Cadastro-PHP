@@ -29,7 +29,7 @@ mysqli_close($conexao);
     <div class="container">
         <nav>
             <ul class="menu">
-                <li>Cadastro</li>
+                <a href="index.html"><li>Cadastro</li></a>
                 <a href="consultas.php"><li>Consultas</li></a>
             </ul>
         </nav>    
